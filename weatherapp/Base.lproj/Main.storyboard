@@ -1,24 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="weatherapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j98-3f-ZNS"/>
+                        <viewControllerLayoutGuide type="bottom" id="iPS-Nl-mN1"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdd-7l-7ip" userLabel="Temperature Label">
+                                <rect key="frame" x="187" y="290" width="0.0" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5uO-gz-NDV" userLabel="Wunderground Image View">
+                                <rect key="frame" x="155.5" y="209" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="Ckb-Py-hFF"/>
+                                    <constraint firstAttribute="height" constant="64" id="Spy-Z7-kAF"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2a-GB-gRn">
+                                <rect key="frame" x="146" y="573" width="83" height="30"/>
+                                <state key="normal" title="Préférences"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rafraichir" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oj-0k-8dg" userLabel="Ville Label">
+                                <rect key="frame" x="140" y="337" width="95" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Zw-34-9iJ" userLabel="History Button">
+                                <rect key="frame" x="311" y="36" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="ToK-7D-Bhd"/>
+                                    <constraint firstAttribute="height" constant="32" id="qyn-rU-1N3"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="history"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coj-fL-xy9">
+                                <rect key="frame" x="107.5" y="381" width="160" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8K7-C8-PQY" userLabel="Refresh Button">
+                                        <rect key="frame" x="112" y="16" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="s4h-3o-wvj"/>
+                                            <constraint firstAttribute="height" constant="32" id="xtg-V7-ymQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="location"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW2-7x-vWK" userLabel="Home Button">
+                                        <rect key="frame" x="16" y="16" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="2xx-OI-OPH"/>
+                                            <constraint firstAttribute="height" constant="32" id="yWZ-Cc-aOb"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="home"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="8K7-C8-PQY" firstAttribute="centerY" secondItem="FW2-7x-vWK" secondAttribute="centerY" id="5qz-yK-lKl"/>
+                                    <constraint firstItem="8K7-C8-PQY" firstAttribute="leading" secondItem="FW2-7x-vWK" secondAttribute="trailing" constant="64" id="DKV-sk-vGk"/>
+                                    <constraint firstItem="FW2-7x-vWK" firstAttribute="top" secondItem="coj-fL-xy9" secondAttribute="top" constant="16" id="fRW-Dw-X8a"/>
+                                    <constraint firstItem="FW2-7x-vWK" firstAttribute="leading" secondItem="coj-fL-xy9" secondAttribute="leading" constant="16" id="kz4-IT-EOD"/>
+                                    <constraint firstAttribute="trailing" secondItem="8K7-C8-PQY" secondAttribute="trailing" constant="16" id="rIh-zy-xDd"/>
+                                    <constraint firstAttribute="bottom" secondItem="FW2-7x-vWK" secondAttribute="bottom" constant="16" id="v48-pp-nqa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="i2a-GB-gRn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="12F-y2-L1T"/>
+                            <constraint firstItem="coj-fL-xy9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aqu-5p-pJu"/>
+                            <constraint firstItem="0oj-0k-8dg" firstAttribute="top" secondItem="5uO-gz-NDV" secondAttribute="bottom" constant="64" id="CL4-z7-dCf"/>
+                            <constraint firstItem="iPS-Nl-mN1" firstAttribute="top" secondItem="i2a-GB-gRn" secondAttribute="bottom" constant="64" id="MZV-ap-Gsv"/>
+                            <constraint firstItem="5uO-gz-NDV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nm4-t7-vul"/>
+                            <constraint firstItem="5uO-gz-NDV" firstAttribute="top" secondItem="j98-3f-ZNS" secondAttribute="bottom" constant="189" id="Wyp-Hk-KDw"/>
+                            <constraint firstItem="3Zw-34-9iJ" firstAttribute="top" secondItem="j98-3f-ZNS" secondAttribute="bottom" constant="16" id="gNQ-KD-Wwg"/>
+                            <constraint firstItem="0oj-0k-8dg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qyI-t5-V35"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Zw-34-9iJ" secondAttribute="trailing" constant="16" id="sHD-JT-noT"/>
+                            <constraint firstItem="coj-fL-xy9" firstAttribute="top" secondItem="0oj-0k-8dg" secondAttribute="bottom" constant="16" id="vDl-gG-QAz"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="history" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="home" width="46.080001831054688" height="46.080001831054688"/>
+        <image name="location" width="41.890907287597656" height="41.890907287597656"/>
+    </resources>
 </document>

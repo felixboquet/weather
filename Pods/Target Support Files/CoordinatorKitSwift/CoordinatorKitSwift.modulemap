@@ -1,6 +1,0 @@
-framework module CoordinatorKitSwift {
-  umbrella header "CoordinatorKitSwift-umbrella.h"
-
-  export *
-  module * { export * }
-}
