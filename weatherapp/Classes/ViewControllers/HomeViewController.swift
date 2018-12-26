@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController, StoryboardInitializable {
     
+    @IBOutlet var temperatureLabel: UILabel!
+    @IBOutlet var weatherImage: UIImageView!
+    @IBOutlet var cityLabel: UILabel!
     
     
 }

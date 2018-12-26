@@ -98,6 +98,11 @@
                             <constraint firstItem="coj-fL-xy9" firstAttribute="top" secondItem="0oj-0k-8dg" secondAttribute="bottom" constant="16" id="vDl-gG-QAz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="0oj-0k-8dg" id="bUC-ML-fRq"/>
+                        <outlet property="temperatureLabel" destination="Rdd-7l-7ip" id="yur-MU-0jN"/>
+                        <outlet property="weatherImage" destination="5uO-gz-NDV" id="Gpn-ko-TKf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

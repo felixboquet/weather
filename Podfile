@@ -14,6 +14,7 @@ target 'weatherapp' do
 #  pod 'RxDataSources' , '~> 3.0'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
+  pod 'RealmSwift'
 #  pod 'ObjectMapper+Realm', '~> 0.6'
 #  pod 'Realm'
 
