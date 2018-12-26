@@ -1,0 +1,31 @@
+PODS:
+  - CoordinatorKitSwift (1.1.3):
+    - CoordinatorKitSwift/Core (= 1.1.3)
+  - CoordinatorKitSwift/Core (1.1.3)
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+
+DEPENDENCIES:
+  - CoordinatorKitSwift
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CoordinatorKitSwift
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
+
+SPEC CHECKSUMS:
+  CoordinatorKitSwift: 915a71721c144179437f5e2b8ac58e26936eda87
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+
+PODFILE CHECKSUM: fa0df6db10ed18b955a653f38c110220d4085472
+
+COCOAPODS: 1.6.0.beta.1
