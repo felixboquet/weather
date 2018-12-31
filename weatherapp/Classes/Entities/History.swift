@@ -7,6 +7,7 @@
 //
 
 import RealmSwift
+import ObjectMapper
 
 class History: Object {
     
@@ -14,6 +15,11 @@ class History: Object {
     @objc dynamic var date: String = ""
     @objc dynamic var image: String = ""
     @objc dynamic var temperature: String = ""
+    
+    required convenience public init?(map: Map) {
+        self.init()
+        self.mapping(map: map)
+    }
     
     func createHistory(adress: String, date: String, image: String, temperature: String) -> History {
         
@@ -25,6 +31,14 @@ class History: Object {
         
         return newHistory
         
+    }
+    
+}
+
+extension History: Mappable {
+    
+    public func mapping(map: Map) {
+        temperature <- map["temperature"]
     }
     
 }

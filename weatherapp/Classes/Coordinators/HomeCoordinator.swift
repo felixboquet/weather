@@ -21,7 +21,6 @@ class HomeCoordinator: BaseCoordinator<Void> {
         let viewController = HomeViewController.initFromStoryboard(name: "Main")
         let navigationController = UINavigationController(rootViewController: viewController)
         
-        
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         
