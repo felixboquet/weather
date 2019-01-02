@@ -52,5 +52,25 @@ class HomeViewController: UIViewController, StoryboardInitializable {
         cityLabel.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
         cityLabel.centerYAnchor.constraint(equalTo: mainView.centerYAnchor).isActive = true
         
+        // Temperature label
+        temperatureLabel = UILabel()
+        temperatureLabel.text = "5°C"
+        temperatureLabel.textAlignment = .center
+        temperatureLabel.font = UIFont(name: temperatureLabel.font.fontName, size: 40)
+        mainView.addSubview(temperatureLabel)
+        
+        temperatureLabel.translatesAutoresizingMaskIntoConstraints = false
+        temperatureLabel.bottomAnchor.constraint(equalTo: cityLabel.topAnchor, constant: -32).isActive = true
+        temperatureLabel.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
+        
+        // Weather image
+        weatherImage = UIImageView()
+        weatherImage.image = UIImage(named: "sun")
+        mainView.addSubview(weatherImage)
+        
+        weatherImage.translatesAutoresizingMaskIntoConstraints = false
+        weatherImage.bottomAnchor.constraint(equalTo: temperatureLabel.topAnchor, constant: -32).isActive = true
+        weatherImage.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
+        
     }
 }
