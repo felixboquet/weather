@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HomeViewController: UIViewController, StoryboardInitializable {
     
@@ -14,9 +16,12 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     var weatherImage: UIImageView!
     var cityLabel: UILabel!
     var mainView: UIView!
+    var refreshButton: UIButton!
     
     var networkProvider: NetworkManager!
-
+    var viewModel: HomeViewModel!
+    
+    private let disposeBag = DisposeBag()
     
     init(networkProvider: NetworkManager) {
         super.init(nibName: nil, bundle: nil)
@@ -29,6 +34,15 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel = HomeViewModel()
+        
+        self.setupUI()
+        self.setupBindings()
+        
+    }
+    
+    private func setupUI() {
         
         // Main View
         mainView = UIView()
@@ -71,6 +85,30 @@ class HomeViewController: UIViewController, StoryboardInitializable {
         weatherImage.translatesAutoresizingMaskIntoConstraints = false
         weatherImage.bottomAnchor.constraint(equalTo: temperatureLabel.topAnchor, constant: -32).isActive = true
         weatherImage.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
+        weatherImage.widthAnchor.constraint(equalToConstant: 128).isActive = true
+        weatherImage.heightAnchor.constraint(equalToConstant: 128).isActive = true
         
+        // Refresh button
+        refreshButton = UIButton()
+        refreshButton.setImage(UIImage(named: "location"), for: UIControl.State.normal)
+        mainView.addSubview(refreshButton)
+        
+        refreshButton.translatesAutoresizingMaskIntoConstraints = false
+        refreshButton.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 32).isActive = true
+        refreshButton.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
+        refreshButton.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        refreshButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        
+    }
+    
+    private func setupBindings() {
+        
+        refreshButton.rx.tap
+            .bind{
+                if let viewModel = self.viewModel {
+                    viewModel.getLocalWeather()
+                }
+            }
+            .disposed(by: disposeBag)
     }
 }
