@@ -11,18 +11,20 @@ import RxSwift
 
 class HomeCoordinator: BaseCoordinator<Void> {
     
-    private let window: UIWindow
+    private var window: UIWindow
     
     init(window: UIWindow) {
         self.window = window
     }
     
     override func start() -> Observable<Void> {
-        let viewController = HomeViewController.initFromStoryboard(name: "Main")
-        let navigationController = UINavigationController(rootViewController: viewController)
         
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
+        let provider = NetworkManager()
+        let navigationController = HomeViewController(networkProvider: provider)
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window.rootViewController = navigationController
+        self.window.makeKeyAndVisible()
         
         return Observable.never()
     }

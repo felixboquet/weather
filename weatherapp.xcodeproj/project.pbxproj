@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		15666B3821D0C33D003464E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15666B3721D0C33D003464E8 /* AppDelegate.swift */; };
-		15666B3D21D0C33D003464E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15666B3B21D0C33D003464E8 /* Main.storyboard */; };
 		15666B4021D0C33D003464E8 /* weatherapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15666B3E21D0C33D003464E8 /* weatherapp.xcdatamodeld */; };
 		15666B4221D0C33E003464E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15666B4121D0C33E003464E8 /* Assets.xcassets */; };
-		15666B4521D0C33E003464E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15666B4321D0C33E003464E8 /* LaunchScreen.storyboard */; };
 		15666B4E21D382F5003464E8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15666B4D21D382F5003464E8 /* AppCoordinator.swift */; };
 		15666B5121D383B7003464E8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15666B5021D383B7003464E8 /* BaseCoordinator.swift */; };
 		15666B5A21D391DE003464E8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15666B5921D391DE003464E8 /* HomeViewController.swift */; };
@@ -27,10 +25,8 @@
 /* Begin PBXFileReference section */
 		15666B3421D0C33D003464E8 /* weatherapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15666B3721D0C33D003464E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		15666B3C21D0C33D003464E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15666B3F21D0C33D003464E8 /* weatherapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = weatherapp.xcdatamodel; sourceTree = "<group>"; };
 		15666B4121D0C33E003464E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		15666B4421D0C33E003464E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15666B4621D0C33E003464E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15666B4D21D382F5003464E8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		15666B5021D383B7003464E8 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -82,9 +78,7 @@
 				15666B4C21D381BA003464E8 /* App */,
 				15666B5321D3846A003464E8 /* Classes */,
 				15666B4F21D38388003464E8 /* Library */,
-				15666B3B21D0C33D003464E8 /* Main.storyboard */,
 				15666B4121D0C33E003464E8 /* Assets.xcassets */,
-				15666B4321D0C33E003464E8 /* LaunchScreen.storyboard */,
 				15666B4621D0C33E003464E8 /* Info.plist */,
 				15666B3E21D0C33D003464E8 /* weatherapp.xcdatamodeld */,
 			);
@@ -255,9 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15666B4521D0C33E003464E8 /* LaunchScreen.storyboard in Resources */,
 				15666B4221D0C33E003464E8 /* Assets.xcassets in Resources */,
-				15666B3D21D0C33D003464E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,25 +338,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		15666B3B21D0C33D003464E8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				15666B3C21D0C33D003464E8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		15666B4321D0C33E003464E8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				15666B4421D0C33E003464E8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		15666B4721D0C33E003464E8 /* Debug */ = {
