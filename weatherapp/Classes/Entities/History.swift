@@ -21,6 +21,16 @@ class History: Object {
         self.mapping(map: map)
     }
     
+//    init?(dictionary :JSONDictionary) {
+//
+//        guard let temperature = dictionary["temperature"] as? String else {
+//                return nil
+//        }
+//
+//        self.temperature = temperature
+//    }
+
+    
     func createHistory(adress: String, date: String, image: String, temperature: String) -> History {
         
         let newHistory = History()

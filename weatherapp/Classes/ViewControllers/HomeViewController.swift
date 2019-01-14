@@ -39,6 +39,7 @@ class HomeViewController: UIViewController, StoryboardInitializable {
         
         self.setupUI()
         self.setupBindings()
+        self.initObserver()
         
     }
     
@@ -103,12 +104,26 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     
     private func setupBindings() {
         
+        
         refreshButton.rx.tap
             .bind{
                 if let viewModel = self.viewModel {
-                    viewModel.getLocalWeather()
+                    self.temperatureLabel.text = viewModel.getLocalWeather()
                 }
             }
             .disposed(by: disposeBag)
+    }
+    
+    private func initObserver() {
+        
+        viewModel.historyRelay.bind(onNext: { [weak self] (history) in
+            guard let me = self, let history = history else {
+                return
+            }
+            
+            me.temperatureLabel.text = history.temperature
+            
+        }).disposed(by: disposeBag)
+        
     }
 }

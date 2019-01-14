@@ -8,23 +8,43 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class HomeViewModel {
     
-    // Call to update the weather
-    let updateWeather: AnyObserver<Void>
+    // outputs
+    let historyRelay = BehaviorRelay<History?>(value: nil)
     
-    init() {
-        
-        let _updateWeather = PublishSubject<Void>()
-        self.updateWeather = _updateWeather.asObserver()
-        
-    }
+    let weatherApplicationLogic = WeatherApplicationLogic()
     
-    public func getLocalWeather() {
+    let disposeBag = DisposeBag()
+    
+//    init() {
+//
+//    }
+    
+    public func getLocalWeather() -> String {
         
-        print("coucou")
+        let lat = "43.600000"
+        let long = "1.433333"
         
+        var temp = ""
+        
+        WeatherApplicationLogic().getWeather(lat: lat, long: long).subscribe { event in
+            switch event {
+                case .success(let t):
+                    print("TEMPERATURE : " + t)
+                    temp = t
+                case .error(let error):
+                    print(error)
+            }
+        }.disposed(by: disposeBag)
+        
+//        NetworkManager().getWeather(lat: "43.600000", long: "1.433333") { ([History]) in
+//            temp = 
+//        }
+        
+        return temp
     }
     
 }
