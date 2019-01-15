@@ -18,14 +18,13 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     var mainView: UIView!
     var refreshButton: UIButton!
     
-    var networkProvider: NetworkManager!
     var viewModel: HomeViewModel!
     
     private let disposeBag = DisposeBag()
     
-    init(networkProvider: NetworkManager) {
+    init(viewModel: HomeViewModel) {
         super.init(nibName: nil, bundle: nil)
-        self.networkProvider = networkProvider
+        self.viewModel = viewModel
     }
     
     required init?(coder aDecoder: NSCoder) {

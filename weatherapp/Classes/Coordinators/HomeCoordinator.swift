@@ -19,8 +19,8 @@ class HomeCoordinator: BaseCoordinator<Void> {
     
     override func start() -> Observable<Void> {
         
-        let provider = NetworkManager()
-        let navigationController = HomeViewController(networkProvider: provider)
+        let viewModel = HomeViewModel()
+        let navigationController = HomeViewController(viewModel: viewModel)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window.rootViewController = navigationController
