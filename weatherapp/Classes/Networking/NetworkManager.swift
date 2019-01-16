@@ -8,7 +8,8 @@
 
 import RxSwift
 import Moya
-import Alamofire
+import ObjectMapper
+import Moya_ObjectMapper
 
 enum APIEnvironment {
     case staging
@@ -33,24 +34,20 @@ struct NetworkManager {
     
     public func getWeather(lat: String, long: String) -> Single<String> {
 
-        return provider.rx.request(.weather(lat: lat, long: long)).mapString(atKeyPath: "temperature")
+//        return provider.rx.request(.weather(lat: lat, long: long)).debug().mapString(atKeyPath: "temperature")
         
-//        provider.request(.weather(lat: lat, long: long)) { result in
-//            switch result {
-//            case let .success(response):
-//
-//                let data = response.data
-//
-//                let history = History.init(map: dictionaries.)
-////                do {
-//                    print("success")
-////                } catch let err {
-////                    print(err)
-////                }
-//            case let .failure(error):
-//                print(error)
-//            }
-//        }
+        self.provider.request(WeatherEndPoint.weather(lat: lat, long: long)) { result in
+            switch result {
+            case let .success(response):
+                print(response)
+                
+            case let .failure(error):
+                print(error)
+                
+            }
+        }
+        
+        return Single<String>.just("test")
     }
 }
 

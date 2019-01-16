@@ -102,15 +102,15 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     }
     
     private func setupBindings() {
-        
-        
-        refreshButton.rx.tap
-            .bind{
-                if let viewModel = self.viewModel {
-                    self.temperatureLabel.text = viewModel.getLocalWeather()
-                }
+
+        refreshButton.rx.tap.flatMap {[weak viewModel] () -> Single<String> in
+            if let viewModel = viewModel {
+                return viewModel.getLocalWeather().debug()
             }
-            .disposed(by: disposeBag)
+            return Single<String>.never()
+        }.bind(to: temperatureLabel.rx.text)
+        .disposed(by: disposeBag)
+
     }
     
     private func initObserver() {

@@ -23,7 +23,7 @@ extension WeatherEndPoint : TargetType {
         case .qa :
             return ""
         case .staging :
-            return "https://api.darksky.net/forecast/" + NetworkManager.APIKey + "/"
+            return "https://api.darksky.net/"
         }
     }
     
@@ -36,7 +36,12 @@ extension WeatherEndPoint : TargetType {
     }
     
     var path: String {
-        return ""
+        
+        if case .weather(let lat, let long) = self {
+            return "forecast/" + NetworkManager.APIKey + "/\(lat),\(long)"
+        }
+        
+        return "forecast/" + NetworkManager.APIKey + "/"
     }
     
     var method: Method {
@@ -63,7 +68,11 @@ extension WeatherEndPoint : TargetType {
     }
     
     var task: Task {
-        return .requestPlain
+        switch self {
+        case .weather(_, _):
+            return .requestPlain
+            
+        }
     }
     
     var headers: [String : String]? {
