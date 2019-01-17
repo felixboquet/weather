@@ -10,13 +10,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class HomeViewController: UIViewController, StoryboardInitializable {
+class HomeViewController: UIViewController {
     
     var temperatureLabel: UILabel!
     var weatherImage: UIImageView!
     var cityLabel: UILabel!
     var mainView: UIView!
     var refreshButton: UIButton!
+    var historyButton: UIButton!
     
     var viewModel: HomeViewModel!
     
@@ -33,8 +34,6 @@ class HomeViewController: UIViewController, StoryboardInitializable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel = HomeViewModel()
         
         self.setupUI()
         self.setupBindings()
@@ -99,17 +98,36 @@ class HomeViewController: UIViewController, StoryboardInitializable {
         refreshButton.widthAnchor.constraint(equalToConstant: 32).isActive = true
         refreshButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
         
+        // History button
+        historyButton = UIButton()
+        historyButton.setImage(UIImage(named: "history"), for: UIControl.State.normal)
+        mainView.addSubview(historyButton)
+        
+        historyButton.translatesAutoresizingMaskIntoConstraints = false
+        historyButton.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 64).isActive = true
+        historyButton.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -32).isActive = true
+        historyButton.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        historyButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        
     }
     
     private func setupBindings() {
 
         refreshButton.rx.tap.flatMap {[weak viewModel] () -> Single<String> in
             if let viewModel = viewModel {
-                return viewModel.getLocalWeather().debug()
+                return viewModel.getLocalWeather()
             }
             return Single<String>.never()
         }.bind(to: temperatureLabel.rx.text)
         .disposed(by: disposeBag)
+        
+        historyButton.rx.tap.bind(onNext: { [weak viewModel] in
+            guard let viewModel = viewModel else {
+                return
+            }
+            viewModel.didTouchGoHistory()
+            
+        }).disposed(by: disposeBag)
 
     }
     

@@ -16,9 +16,8 @@ class HomeViewModel {
     let historyRelay = BehaviorRelay<History?>(value: nil)
     
     let weatherApplicationLogic = WeatherApplicationLogic()
-    
     let disposeBag = DisposeBag()
-    
+    let goHistory = PublishRelay<Void>()
     
     public func getLocalWeather() -> Single<String> {
         
@@ -27,6 +26,10 @@ class HomeViewModel {
 
         return WeatherApplicationLogic().getWeather(lat: lat, long: long).debug()
         
+    }
+    
+    public func didTouchGoHistory() {
+        PublishRelay<Void>.just(()).bind(to: goHistory).dispose()
     }
     
 }

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1509DED421DCFC9C00DBCF53 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1509DED321DCFC9C00DBCF53 /* HomeViewModel.swift */; };
 		1509DED621DD12D300DBCF53 /* WeatherApplicationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1509DED521DD12D300DBCF53 /* WeatherApplicationLogic.swift */; };
+		1566643321F08FB80096AAEE /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566643221F08FB80096AAEE /* HistoryViewModel.swift */; };
+		1566643521F0901A0096AAEE /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566643421F0901A0096AAEE /* HistoryViewController.swift */; };
+		1566643721F093020096AAEE /* HistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566643621F093020096AAEE /* HistoryCoordinator.swift */; };
 		15666B3821D0C33D003464E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15666B3721D0C33D003464E8 /* AppDelegate.swift */; };
 		15666B4021D0C33D003464E8 /* weatherapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15666B3E21D0C33D003464E8 /* weatherapp.xcdatamodeld */; };
 		15666B4221D0C33E003464E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15666B4121D0C33E003464E8 /* Assets.xcassets */; };
@@ -16,7 +19,6 @@
 		15666B5121D383B7003464E8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15666B5021D383B7003464E8 /* BaseCoordinator.swift */; };
 		15666B5A21D391DE003464E8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15666B5921D391DE003464E8 /* HomeViewController.swift */; };
 		15666B5C21D39692003464E8 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15666B5B21D39692003464E8 /* HomeCoordinator.swift */; };
-		15666B5E21D3C231003464E8 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15666B5D21D3C231003464E8 /* StoryboardInitializable.swift */; };
 		157042C521DA198A00EAEF49 /* WeatherEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157042C421DA198A00EAEF49 /* WeatherEndPoint.swift */; };
 		157042C721DA1EB600EAEF49 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157042C621DA1EB600EAEF49 /* NetworkManager.swift */; };
 		15C9B0E121D3D3F7005A56F4 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9B0E021D3D3F7005A56F4 /* History.swift */; };
@@ -26,6 +28,9 @@
 /* Begin PBXFileReference section */
 		1509DED321DCFC9C00DBCF53 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1509DED521DD12D300DBCF53 /* WeatherApplicationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApplicationLogic.swift; sourceTree = "<group>"; };
+		1566643221F08FB80096AAEE /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		1566643421F0901A0096AAEE /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		1566643621F093020096AAEE /* HistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoordinator.swift; sourceTree = "<group>"; };
 		15666B3421D0C33D003464E8 /* weatherapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15666B3721D0C33D003464E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15666B3F21D0C33D003464E8 /* weatherapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = weatherapp.xcdatamodel; sourceTree = "<group>"; };
@@ -35,7 +40,6 @@
 		15666B5021D383B7003464E8 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		15666B5921D391DE003464E8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		15666B5B21D39692003464E8 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		15666B5D21D3C231003464E8 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		157042C421DA198A00EAEF49 /* WeatherEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEndPoint.swift; sourceTree = "<group>"; };
 		157042C621DA1EB600EAEF49 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		15C9B0E021D3D3F7005A56F4 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
@@ -90,7 +94,6 @@
 		15666B4C21D381BA003464E8 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				15666B4D21D382F5003464E8 /* AppCoordinator.swift */,
 				15666B3721D0C33D003464E8 /* AppDelegate.swift */,
 			);
 			path = App;
@@ -100,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				15666B5021D383B7003464E8 /* BaseCoordinator.swift */,
-				15666B5D21D3C231003464E8 /* StoryboardInitializable.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -108,6 +110,8 @@
 		15666B5221D38456003464E8 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				15666B4D21D382F5003464E8 /* AppCoordinator.swift */,
+				1566643621F093020096AAEE /* HistoryCoordinator.swift */,
 				15666B5B21D39692003464E8 /* HomeCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -130,6 +134,7 @@
 		15666B5421D38476003464E8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1566643421F0901A0096AAEE /* HistoryViewController.swift */,
 				15666B5921D391DE003464E8 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -146,6 +151,7 @@
 		15666B5621D3850C003464E8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1566643221F08FB80096AAEE /* HistoryViewModel.swift */,
 				1509DED321DCFC9C00DBCF53 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
@@ -333,16 +339,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				15C9B0E121D3D3F7005A56F4 /* History.swift in Sources */,
+				1566643721F093020096AAEE /* HistoryCoordinator.swift in Sources */,
 				1509DED421DCFC9C00DBCF53 /* HomeViewModel.swift in Sources */,
-				15666B5E21D3C231003464E8 /* StoryboardInitializable.swift in Sources */,
 				15666B5A21D391DE003464E8 /* HomeViewController.swift in Sources */,
 				15666B5121D383B7003464E8 /* BaseCoordinator.swift in Sources */,
+				1566643521F0901A0096AAEE /* HistoryViewController.swift in Sources */,
 				157042C721DA1EB600EAEF49 /* NetworkManager.swift in Sources */,
 				1509DED621DD12D300DBCF53 /* WeatherApplicationLogic.swift in Sources */,
 				15666B4E21D382F5003464E8 /* AppCoordinator.swift in Sources */,
 				15666B4021D0C33D003464E8 /* weatherapp.xcdatamodeld in Sources */,
 				15666B3821D0C33D003464E8 /* AppDelegate.swift in Sources */,
 				15666B5C21D39692003464E8 /* HomeCoordinator.swift in Sources */,
+				1566643321F08FB80096AAEE /* HistoryViewModel.swift in Sources */,
 				157042C521DA198A00EAEF49 /* WeatherEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

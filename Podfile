@@ -7,7 +7,6 @@ target 'weatherapp' do
   # Pods for weatherapp
   
 #  pod 'RxAtomic',	'~> 4.4.0'
-#  pod 'ObjectMapper', '~> 3.1'
 #  pod 'RxDataSources' , '~> 3.0'
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
@@ -17,7 +16,7 @@ target 'weatherapp' do
   pod 'Moya/RxSwift'
   pod 'Moya-ObjectMapper'
   pod 'Moya-ObjectMapper/RxSwift'
+  pod 'Moya-ModelMapper/RxSwift'
 #  pod 'ObjectMapper+Realm', '~> 0.6'
-#  pod 'Realm'
 
 end
