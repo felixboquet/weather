@@ -54,11 +54,19 @@ class HistoryViewController: UIViewController {
         test.translatesAutoresizingMaskIntoConstraints = false
         test.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
         test.centerYAnchor.constraint(equalTo: mainView.centerYAnchor).isActive = true
+        
+        // Back button
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back-arrow"), for: .normal)
+        backButton.setTitle("Back", for: .normal)
+        backButton.setTitleColor(backButton.tintColor, for: .normal)
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
     private func setupBindings() {
         
-        
+//        self.navigationItem.leftBarButtonItem?.rx.tap
         
     }
     
