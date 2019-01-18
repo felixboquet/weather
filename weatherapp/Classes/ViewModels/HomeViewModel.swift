@@ -23,7 +23,7 @@ class HomeViewModel {
         
         let lat = "43.600000"
         let long = "1.433333"
-
+        //@fboq Hum does not work ! maybe we lose a reference?
         return WeatherApplicationLogic().getWeather(lat: lat, long: long).debug()
         
     }

@@ -34,20 +34,9 @@ struct NetworkManager {
     
     public func getWeather(lat: String, long: String) -> Single<String> {
 
-//        return provider.rx.request(.weather(lat: lat, long: long)).debug().mapString(atKeyPath: "temperature")
+       return provider.rx.request(.weather(lat: lat, long: long)).debug().mapString(atKeyPath: "currently.temperature").catchErrorJustReturn("Error") // Ok it's a demo, just say Error
         
-        self.provider.request(WeatherEndPoint.weather(lat: lat, long: long)) { result in
-            switch result {
-            case let .success(response):
-                print(response)
-                
-            case let .failure(error):
-                print(error)
-                
-            }
-        }
-        
-        return Single<String>.just("test")
+       
     }
 }
 
