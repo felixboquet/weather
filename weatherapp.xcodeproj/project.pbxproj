@@ -124,7 +124,6 @@
 				15666B5221D38456003464E8 /* Coordinators */,
 				15666B5521D384F0003464E8 /* Entities */,
 				157042C321DA196900EAEF49 /* Networking */,
-				15666B5821D38539003464E8 /* Services */,
 				15666B5421D38476003464E8 /* ViewControllers */,
 				15666B5621D3850C003464E8 /* ViewModels */,
 			);
@@ -163,13 +162,6 @@
 				1509DED521DD12D300DBCF53 /* WeatherApplicationLogic.swift */,
 			);
 			path = ApplicationLogics;
-			sourceTree = "<group>";
-		};
-		15666B5821D38539003464E8 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		157042C321DA196900EAEF49 /* Networking */ = {
