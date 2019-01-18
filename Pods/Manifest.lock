@@ -1,17 +1,38 @@
 PODS:
-  - Alamofire (4.8.0)
-  - Moya (12.0.1):
-    - Moya/Core (= 12.0.1)
-  - Moya/Core (12.0.1):
+  - Alamofire (4.8.1)
+  - ModelMapper (9.0.1):
+    - ModelMapper/Core (= 9.0.1)
+  - ModelMapper/Core (9.0.1)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya-ModelMapper/Core (7.1.0):
+    - ModelMapper
+    - Moya (~> 11.0)
+  - Moya-ModelMapper/RxSwift (7.1.0):
+    - Moya-ModelMapper/Core
+    - Moya/RxSwift (~> 11.0)
+    - RxSwift
+  - Moya-ObjectMapper (2.7):
+    - Moya-ObjectMapper/Core (= 2.7)
+  - Moya-ObjectMapper/Core (2.7):
+    - Moya (~> 11)
+    - ObjectMapper (~> 3.3)
+  - Moya-ObjectMapper/RxSwift (2.7):
+    - Moya-ObjectMapper/Core
+    - RxSwift (~> 4.1)
+  - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
-    - Result (~> 4.0)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
   - ObjectMapper (3.3.0)
-  - Realm (3.13.0):
-    - Realm/Headers (= 3.13.0)
-  - Realm/Headers (3.13.0)
-  - RealmSwift (3.13.0):
-    - Realm (= 3.13.0)
-  - Result (4.0.0)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
+  - Result (3.2.4)
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
     - RxSwift (~> 4.0)
@@ -20,6 +41,10 @@ PODS:
 
 DEPENDENCIES:
   - Moya
+  - Moya-ModelMapper/RxSwift
+  - Moya-ObjectMapper
+  - Moya-ObjectMapper/RxSwift
+  - Moya/RxSwift
   - ObjectMapper (~> 3.3.0)
   - RealmSwift
   - RxCocoa (~> 4.0)
@@ -28,7 +53,10 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - ModelMapper
     - Moya
+    - Moya-ModelMapper
+    - Moya-ObjectMapper
     - ObjectMapper
     - Realm
     - RealmSwift
@@ -38,16 +66,19 @@ SPEC REPOS:
     - RxSwift
 
 SPEC CHECKSUMS:
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  ModelMapper: 89a61430a75e6265040dc9555ab1feddeb25b986
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Moya-ModelMapper: 35209257d9e886cedf91289559a41723f5fbd095
+  Moya-ObjectMapper: 441caa307b527331fde59e2577adc632a16f1255
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
-  Realm: 5edd2ee65406aef591a4f9895de5a3440e51b3d8
-  RealmSwift: be5ebc7930e37cd3376b41cec7f21984528aaa16
-  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
-PODFILE CHECKSUM: 021e3c77be3736c01a9755601edc9e18cbfb5307
+PODFILE CHECKSUM: 8c79e469fbf12fbed5441ad9ac17d7c75305bab0
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.5.3
