@@ -11,19 +11,18 @@ import RxSwift
 
 class HistoryCoordinator: BaseCoordinator<Void> {
     
-    private let rootViewController: UIViewController
+    private let presenter: UINavigationController
     
-    init(rootViewController: UIViewController) {
-        self.rootViewController = rootViewController
+    init(presenter: UINavigationController) {
+        self.presenter = presenter
     }
     
     override func start() -> Observable<Void> {
         
         let viewModel = HistoryViewModel()
         let viewController = HistoryViewController(viewModel: viewModel)
-        let navigationController = UINavigationController(rootViewController: viewController)
         
-        rootViewController.present(navigationController, animated: true)
+        presenter.pushViewController(viewController, animated: true)
         
         return Observable.never()
     }

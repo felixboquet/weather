@@ -11,17 +11,17 @@ import RxSwift
 
 class HomeCoordinator: BaseCoordinator<Void> {
     
-    private var window: UIWindow
+    private let presenter: UINavigationController
     
-    init(window: UIWindow) {
-        self.window = window
+    init(presenter: UINavigationController) {
+        self.presenter = presenter
     }
     
     override func start() -> Observable<Void> {
         
         let viewModel = HomeViewModel()
         let viewController = HomeViewController(viewModel: viewModel)
-        let navigationController = UINavigationController(rootViewController: viewController)
+        viewController.title = "Home"
         
         viewModel.goHistory.asSignal().emit(onNext: { [weak self] () in
             guard let me = self else {
@@ -30,16 +30,14 @@ class HomeCoordinator: BaseCoordinator<Void> {
             me.displayHistory(on: viewController).subscribe().disposed(by: me.disposeBag)
         }).disposed(by: disposeBag)
         
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window.rootViewController = navigationController
-        self.window.makeKeyAndVisible()
+        presenter.pushViewController(viewController, animated: true)
         
         return Observable.never()
     }
     
     public func displayHistory(on rootViewController: UIViewController) -> Observable<Void> {
 
-        let coordinator = HistoryCoordinator(rootViewController: rootViewController)
+        let coordinator = HistoryCoordinator(presenter: self.presenter)
         return coordinate(to: coordinator)
         
     }

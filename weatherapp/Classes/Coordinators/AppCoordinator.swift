@@ -12,13 +12,17 @@ import RxSwift
 class AppCoordinator: BaseCoordinator<Void> {
     
     private let window: UIWindow
+    let rootViewController: UINavigationController
     
     init(window: UIWindow) {
         self.window = window
+        rootViewController = UINavigationController()
     }
     
     override func start() -> Observable<Void> {
-        let homeCoordinator = HomeCoordinator(window: window)
+        window.rootViewController = rootViewController
+        window.makeKeyAndVisible()
+        let homeCoordinator = HomeCoordinator(presenter: rootViewController)
         return coordinate(to: homeCoordinator)
     }
 }

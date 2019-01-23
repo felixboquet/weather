@@ -104,7 +104,7 @@ class HomeViewController: UIViewController {
         mainView.addSubview(historyButton)
         
         historyButton.translatesAutoresizingMaskIntoConstraints = false
-        historyButton.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 64).isActive = true
+        historyButton.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 96).isActive = true
         historyButton.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -32).isActive = true
         historyButton.widthAnchor.constraint(equalToConstant: 32).isActive = true
         historyButton.heightAnchor.constraint(equalToConstant: 32).isActive = true
