@@ -13,6 +13,7 @@ import RxCocoa
 class HistoryViewController: UIViewController {
     
     var historyViewModel: HistoryViewModel!
+    var tableView: UITableView = UITableView(frame: CGRect.zero)
     private let disposeBag = DisposeBag()
     
     var mainView: UIView!
@@ -47,14 +48,26 @@ class HistoryViewController: UIViewController {
         mainView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
         mainView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
         
-        // Label bidon
-        test = UILabel()
-        test.text = "COUCOU"
-        mainView.addSubview(test)
+        // Table View
+        setupTableView()
         
-        test.translatesAutoresizingMaskIntoConstraints = false
-        test.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
-        test.centerYAnchor.constraint(equalTo: mainView.centerYAnchor).isActive = true
+    }
+    
+    private func setupTableView() {
+        
+        super.viewDidLayoutSubviews()
+        
+        let tableView = UITableView()
+        tableView.register(HistoryTableViewCell.self, forCellReuseIdentifier: "HistoryTableViewCell")
+        self.tableView = tableView
+        mainView.addSubview(self.tableView)
+        
+        self.tableView.translatesAutoresizingMaskIntoConstraints = false
+        self.tableView.leftAnchor.constraint(equalTo: mainView.leftAnchor).isActive = true
+        self.tableView.rightAnchor.constraint(equalTo:  mainView.rightAnchor).isActive = true
+        self.tableView.topAnchor.constraint(equalTo: mainView.topAnchor).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor).isActive = true
+        
         
     }
     

@@ -21,6 +21,7 @@
 		15666B5C21D39692003464E8 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15666B5B21D39692003464E8 /* HomeCoordinator.swift */; };
 		157042C521DA198A00EAEF49 /* WeatherEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157042C421DA198A00EAEF49 /* WeatherEndPoint.swift */; };
 		157042C721DA1EB600EAEF49 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157042C621DA1EB600EAEF49 /* NetworkManager.swift */; };
+		15C244CA21F9B7E10055CB6C /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C244C921F9B7E10055CB6C /* HistoryTableViewCell.swift */; };
 		15C9B0E121D3D3F7005A56F4 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C9B0E021D3D3F7005A56F4 /* History.swift */; };
 		E276FD903F4C66CF88C656BB /* Pods_weatherapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A367266B8B775BF11FAA1AE /* Pods_weatherapp.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		15666B5B21D39692003464E8 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		157042C421DA198A00EAEF49 /* WeatherEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEndPoint.swift; sourceTree = "<group>"; };
 		157042C621DA1EB600EAEF49 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		15C244C921F9B7E10055CB6C /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		15C9B0E021D3D3F7005A56F4 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		7CCFEBB6DDAC827FB6B42AA6 /* Pods-weatherapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherapp/Pods-weatherapp.debug.xcconfig"; sourceTree = "<group>"; };
 		9A367266B8B775BF11FAA1AE /* Pods_weatherapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weatherapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +86,7 @@
 				15666B4C21D381BA003464E8 /* App */,
 				15666B5321D3846A003464E8 /* Classes */,
 				15666B4F21D38388003464E8 /* Library */,
+				15C244C721F9B6AB0055CB6C /* Views */,
 				15666B4121D0C33E003464E8 /* Assets.xcassets */,
 				15666B4621D0C33E003464E8 /* Info.plist */,
 				15666B3E21D0C33D003464E8 /* weatherapp.xcdatamodeld */,
@@ -171,6 +174,22 @@
 				157042C421DA198A00EAEF49 /* WeatherEndPoint.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		15C244C721F9B6AB0055CB6C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				15C244C821F9B7CA0055CB6C /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		15C244C821F9B7CA0055CB6C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				15C244C921F9B7E10055CB6C /* HistoryTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		44033F225089A792DCE4009A /* Pods */ = {
@@ -267,6 +286,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-weatherapp/Pods-weatherapp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -282,6 +302,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -335,6 +356,7 @@
 				157042C721DA1EB600EAEF49 /* NetworkManager.swift in Sources */,
 				1509DED621DD12D300DBCF53 /* WeatherApplicationLogic.swift in Sources */,
 				15666B4E21D382F5003464E8 /* AppCoordinator.swift in Sources */,
+				15C244CA21F9B7E10055CB6C /* HistoryTableViewCell.swift in Sources */,
 				15666B4021D0C33D003464E8 /* weatherapp.xcdatamodeld in Sources */,
 				15666B3821D0C33D003464E8 /* AppDelegate.swift in Sources */,
 				15666B5C21D39692003464E8 /* HomeCoordinator.swift in Sources */,
