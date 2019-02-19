@@ -15,6 +15,7 @@ class HistoryViewController: UIViewController {
     var historyViewModel: HistoryViewModel!
     var tableView: UITableView = UITableView(frame: CGRect.zero)
     private let disposeBag = DisposeBag()
+    var historyList: [History]!
     
     var mainView: UIView!
     var test: UILabel!
@@ -32,7 +33,7 @@ class HistoryViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        setupBindings()
+        setupData()
     }
     
     private func setupUI() {
@@ -71,9 +72,16 @@ class HistoryViewController: UIViewController {
         
     }
     
-    private func setupBindings() {
+    private func setupData() {
         
+//        let dataSource = self.data
         
     }
+    
+}
+
+extension HistoryViewController {
+    
+    
     
 }

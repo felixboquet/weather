@@ -113,11 +113,20 @@ class HomeViewController: UIViewController {
     
     private func setupBindings() {
 
-        refreshButton.rx.tap.flatMap {[weak viewModel] () -> Single<String> in
+        // Try https://medium.com/@michaellong/rxswifty-and-his-variadic-disposebag-1682ecceaf41 
+        
+        refreshButton.rx.tap.flatMap {[weak viewModel] () -> Single<History> in
+            
             if let viewModel = viewModel {
-                return viewModel.getLocalWeather()
+                return viewModel.getLocalWeather().debug()
             }
-            return Single<String>.never()
+            
+            // I will handle error later
+            return Single<History>.never()
+        }
+            
+            
+            .map { String(describing:$0.temperature)
         }.bind(to: temperatureLabel.rx.text)
         .disposed(by: disposeBag)
         
@@ -138,7 +147,7 @@ class HomeViewController: UIViewController {
                 return
             }
             
-            me.temperatureLabel.text = history.temperature
+            me.temperatureLabel.text = String(describing: history.temperature)
             
         }).disposed(by: disposeBag)
         

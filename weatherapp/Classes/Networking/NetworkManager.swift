@@ -32,11 +32,9 @@ struct NetworkManager {
     let provider = MoyaProvider<WeatherEndPoint>(plugins: [NetworkLoggerPlugin(verbose: true)])
     static let environment: APIEnvironment = .staging
     
-    public func getWeather(lat: String, long: String) -> Single<String> {
+    public func getWeather(lat: String, long: String) -> Single<History> {
 
-       return provider.rx.request(.weather(lat: lat, long: long)).debug().mapString(atKeyPath: "currently.temperature").catchErrorJustReturn("Error") // Ok it's a demo, just say Error
-        
-       
+        return provider.rx.request(.weather(lat: lat, long: long)).mapObject(History.self)
     }
 }
 

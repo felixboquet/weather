@@ -15,8 +15,9 @@ public struct WeatherApplicationLogic {
     private let disposeBag = DisposeBag()
     private let networkManager = NetworkManager()
     
-    public func getWeather(lat: String, long: String) -> Single<String> {
+    func getWeather(lat: String, long: String) -> Single<History> {
         print("getting weather...")
+        
         return networkManager.getWeather(lat: lat, long: long)
     }
     

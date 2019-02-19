@@ -12,43 +12,35 @@ import ObjectMapper
 class History: Object {
     
     @objc dynamic var adress: String = ""
-    @objc dynamic var date: String = ""
+    @objc dynamic var date: String?
     @objc dynamic var image: String = ""
-    @objc dynamic var temperature: String = ""
+    @objc dynamic var temperature: Float = 0.0
     
     required convenience public init?(map: Map) {
         self.init()
         self.mapping(map: map)
     }
     
-//    init?(dictionary :JSONDictionary) {
+//    func createHistory(adress: String, date: String, image: String, temperature: String) -> History {
 //
-//        guard let temperature = dictionary["temperature"] as? String else {
-//                return nil
-//        }
+//        let newHistory = History()
+//        newHistory.adress = adress
+//        newHistory.date = date
+//        newHistory.image = image
+//        newHistory.temperature = temperature
 //
-//        self.temperature = temperature
+//        return newHistory
+//
 //    }
-
-    
-    func createHistory(adress: String, date: String, image: String, temperature: String) -> History {
-        
-        let newHistory = History()
-        newHistory.adress = adress
-        newHistory.date = date
-        newHistory.image = image
-        newHistory.temperature = temperature
-        
-        return newHistory
-        
-    }
     
 }
 
 extension History: Mappable {
     
     public func mapping(map: Map) {
-        temperature <- map["temperature"]
+        adress <- map["timezone"]
+        image <- map["currently.icon"]
+        temperature <- map["currently.temperature"]
     }
     
 }
