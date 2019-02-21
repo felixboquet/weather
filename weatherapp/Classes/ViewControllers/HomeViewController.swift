@@ -112,31 +112,32 @@ class HomeViewController: UIViewController {
     }
     
     private func setupBindings() {
-
-        // Try https://medium.com/@michaellong/rxswifty-and-his-variadic-disposebag-1682ecceaf41 
         
-        refreshButton.rx.tap.flatMap {[weak viewModel] () -> Single<History> in
+        let refresh = refreshButton.rx.tap.flatMap {[weak viewModel] () -> Single<History> in
             
             if let viewModel = viewModel {
-                return viewModel.getLocalWeather().debug()
+                return viewModel.getLocalWeather()
             }
             
             // I will handle error later
             return Single<History>.never()
         }
-            
-            
-            .map { String(describing:$0.temperature)
-        }.bind(to: temperatureLabel.rx.text)
-        .disposed(by: disposeBag)
         
-        historyButton.rx.tap.bind(onNext: { [weak viewModel] in
-            guard let viewModel = viewModel else {
-                return
-            }
-            viewModel.didTouchGoHistory()
+        disposeBag.insert(
+            refresh.map { String(describing:$0.temperature)}
+                .bind(to: temperatureLabel.rx.text),
             
-        }).disposed(by: disposeBag)
+            refresh.map { String(describing:$0.adress)}
+                .bind(to: cityLabel.rx.text),
+            
+            historyButton.rx.tap.bind(onNext: { [weak viewModel] in
+                guard let viewModel = viewModel else {
+                    return
+                }
+                viewModel.didTouchGoHistory()
+                
+            })
+        )
 
     }
     
