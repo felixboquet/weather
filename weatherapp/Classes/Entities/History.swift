@@ -8,6 +8,7 @@
 
 import RealmSwift
 import ObjectMapper
+import Realm
 
 class History: Object {
     
@@ -21,17 +22,25 @@ class History: Object {
         self.mapping(map: map)
     }
     
-//    func createHistory(adress: String, date: String, image: String, temperature: String) -> History {
-//
-//        let newHistory = History()
-//        newHistory.adress = adress
-//        newHistory.date = date
-//        newHistory.image = image
-//        newHistory.temperature = temperature
-//
-//        return newHistory
-//
-//    }
+    init(adress: String, date: String?, image: String, temperature: Float) {
+        super.init()
+        self.adress = adress
+        self.date = date
+        self.image = image
+        self.temperature = temperature
+    }
+    
+    required init() {
+        super.init()
+    }
+    
+    required init(value: Any, schema: RLMSchema) {
+        fatalError("init(value:schema:) has not been implemented")
+    }
+    
+    required init(realm: RLMRealm, schema: RLMObjectSchema) {
+        fatalError("init(realm:schema:) has not been implemented")
+    }
     
 }
 
