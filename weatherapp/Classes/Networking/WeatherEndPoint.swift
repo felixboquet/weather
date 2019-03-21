@@ -79,7 +79,16 @@ extension WeatherEndPoint : TargetType {
         return ["Content-type": "application/json"]
     }
     
-    
-    
-    
+}
+extension WeatherEndPoint {
+    var testSampleData: Data {
+        switch self {
+        case .weather(let lat, let long):
+            // We could fetch the Data from a json file
+//            let url = Bundle(for: WeatherEndPoint.self).url(forResource: "myJson", withExtension: "json")!
+//            return try! Data(contentsOf: url)
+            let latLong = lat + long
+            return Data(latLong.utf8)
+        }
+    }
 }
