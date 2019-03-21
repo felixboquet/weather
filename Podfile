@@ -15,4 +15,10 @@ target 'weatherapp' do
   pod 'Moya/RxSwift', '~> 12.0'
   pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/bmoliveira/Moya-ObjectMapper.git', :branch => 'master'
   pod 'AlamofireImage', '~> 3.4.1'
+  
+  target 'weatherappTests' do
+    pod 'Moya', '~> 12.0'
+    pod 'KIF'
+    pod 'Nimble'
+  end
 end
