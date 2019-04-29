@@ -26,8 +26,6 @@ typealias JSONDictionary = [String:Any]
 
 struct NetworkManager {
     
-    static let APIKey = "f7d5a88bf098e518d6c69bf1e64dc52f"
-    
     // NetworkLoggerPlugin is a pluggin which logs all network activity to the console
     let provider = MoyaProvider<WeatherEndPoint>(plugins: [NetworkLoggerPlugin(verbose: true)])
     static let environment: APIEnvironment = .staging

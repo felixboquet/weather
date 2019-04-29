@@ -37,11 +37,12 @@ extension WeatherEndPoint : TargetType {
     
     var path: String {
         
+        let apiKey = Bundle.main.object(forInfoDictionaryKey: "apiKey") as! String
         if case .weather(let lat, let long) = self {
-            return "forecast/" + NetworkManager.APIKey + "/\(lat),\(long)"
+            return "forecast/" + apiKey + "/\(lat),\(long)"
         }
         
-        return "forecast/" + NetworkManager.APIKey + "/"
+        return "forecast/" + apiKey + "/"
     }
     
     var method: Method {
