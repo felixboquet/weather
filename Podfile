@@ -18,7 +18,5 @@ target 'weatherapp' do
   
   target 'weatherappTests' do
     pod 'Moya', '~> 12.0'
-    pod 'KIF'
-    pod 'Nimble'
   end
 end

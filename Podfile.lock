@@ -1,12 +1,15 @@
 PODS:
-  - Alamofire (4.8.1)
+  - Alamofire (4.8.0)
+  - AlamofireImage (3.4.1):
+    - Alamofire (~> 4.7)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
-  - Moya-ObjectMapper/Core (2.7):
+  - Moya-ObjectMapper/Core (2.8):
     - Moya (~> 12.0)
     - ObjectMapper (~> 3.4)
-  - Moya-ObjectMapper/RxSwift (2.7):
-    - Moya-ObjectMapper/Core (~> 2.7)
+  - Moya-ObjectMapper/RxSwift (2.8):
+    - Moya-ObjectMapper/Core
+    - Moya/RxSwift
     - RxSwift (~> 4)
   - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
@@ -28,6 +31,7 @@ PODS:
     - RxAtomic (~> 4.4)
 
 DEPENDENCIES:
+  - AlamofireImage (~> 3.4.1)
   - Moya (~> 12.0)
   - Moya-ObjectMapper/RxSwift (from `https://github.com/bmoliveira/Moya-ObjectMapper.git`, branch `master`)
   - Moya/RxSwift (~> 12.0)
@@ -39,6 +43,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireImage
     - Moya
     - ObjectMapper
     - Realm
@@ -55,13 +60,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Moya-ObjectMapper:
-    :commit: cfdc07e69751d237aee783fbf5b93190035fd645
+    :commit: 7deadd2621af5812ab458707490b6bfe8015fc2b
     :git: https://github.com/bmoliveira/Moya-ObjectMapper.git
 
 SPEC CHECKSUMS:
-  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
-  Moya-ObjectMapper: 75a0e64d4bb6b005c3e966006ada8b95a873e280
+  Moya-ObjectMapper: c514b5eafcfd5e260f85f7a5bf66895a217e2b37
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
@@ -70,6 +76,6 @@ SPEC CHECKSUMS:
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
 
-PODFILE CHECKSUM: 59a61bb438deab553196f10467fc18739754a184
+PODFILE CHECKSUM: f08a0f7f376e25089eed3e40d326b9ae940a7d5c
 
 COCOAPODS: 1.5.3
