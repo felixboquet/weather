@@ -13,9 +13,9 @@ class HistoryTests: XCTestCase {
     
     func testInitHistory() {
         
-        let history = History(adress: "19 rue de Bayard, 31000 Toulouse", date: nil, image: "soleil", temperature: 10.0)
+        let history = History(address: "19 rue de Bayard, 31000 Toulouse", date: nil, image: "soleil", temperature: 10.0)
         
-        XCTAssertEqual("19 rue de Bayard, 31000 Toulouse", history.adress)
+        XCTAssertEqual("19 rue de Bayard, 31000 Toulouse", history.address)
         XCTAssertEqual(nil, history.date)
         XCTAssertEqual("soleil", history.image)
         XCTAssertEqual(10.0, history.temperature)
@@ -24,7 +24,7 @@ class HistoryTests: XCTestCase {
     
     func testInitHistoryWithDate() {
         
-        let history = History(adress: "19 rue de Bayard, 31000 Toulouse", date: "15/03/2019", image: "soleil", temperature: 10.0)
+        let history = History(address: "19 rue de Bayard, 31000 Toulouse", date: "15/03/2019", image: "soleil", temperature: 10.0)
         
         XCTAssertEqual("15/03/2019", history.date)
         

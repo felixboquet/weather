@@ -127,7 +127,7 @@ class HomeViewController: UIViewController {
             refresh.map { String(describing:$0.temperature)}
                 .bind(to: temperatureLabel.rx.text),
             
-            refresh.map { String(describing:$0.adress)}
+            refresh.map { String(describing:$0.address)}
                 .bind(to: cityLabel.rx.text),
             
             historyButton.rx.tap.bind(onNext: { [weak viewModel] in

@@ -12,7 +12,7 @@ import Realm
 
 class History: Object {
     
-    @objc dynamic var adress: String = ""
+    @objc dynamic var address: String = ""
     @objc dynamic var date: String?
     @objc dynamic var image: String = ""
     @objc dynamic var temperature: Float = 0.0
@@ -22,9 +22,9 @@ class History: Object {
         self.mapping(map: map)
     }
     
-    init(adress: String, date: String?, image: String, temperature: Float) {
+    init(address: String, date: String?, image: String, temperature: Float) {
         super.init()
-        self.adress = adress
+        self.address = address
         self.date = date
         self.image = image
         self.temperature = temperature
@@ -47,7 +47,7 @@ class History: Object {
 extension History: Mappable {
     
     public func mapping(map: Map) {
-        adress <- map["timezone"]
+        address <- map["timezone"]
         image <- map["currently.icon"]
         temperature <- map["currently.temperature"]
     }

@@ -12,6 +12,8 @@
 		15141F912355F23B007DE183 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15141F902355F23B007DE183 /* CircleImage.swift */; };
 		15141F9323574BCA007DE183 /* HistoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15141F9223574BCA007DE183 /* HistoryDetailsView.swift */; };
 		15141F952357552F007DE183 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15141F942357552F007DE183 /* MapView.swift */; };
+		15141F97235760FD007DE183 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15141F96235760FD007DE183 /* HistoryRow.swift */; };
+		15141F9A23576329007DE183 /* historyData.json in Resources */ = {isa = PBXBuildFile; fileRef = 15141F9923576329007DE183 /* historyData.json */; };
 		1515651C223BA3A60009952E /* weatherappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1515651B223BA3A60009952E /* weatherappTests.swift */; };
 		15156526223BA3FD0009952E /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15156524223BA3FD0009952E /* HistoryTests.swift */; };
 		1545B0FD2243E45C005762B1 /* HomeViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1545B0FC2243E45C005762B1 /* HomeViewControllerTest.swift */; };
@@ -51,6 +53,8 @@
 		15141F902355F23B007DE183 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		15141F9223574BCA007DE183 /* HistoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailsView.swift; sourceTree = "<group>"; };
 		15141F942357552F007DE183 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		15141F96235760FD007DE183 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
+		15141F9923576329007DE183 /* historyData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = historyData.json; sourceTree = "<group>"; };
 		15156519223BA3A60009952E /* weatherappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatherappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1515651B223BA3A60009952E /* weatherappTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherappTests.swift; sourceTree = "<group>"; };
 		1515651D223BA3A60009952E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +115,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		15141F98235762E7007DE183 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				15141F9923576329007DE183 /* historyData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1515651A223BA3A60009952E /* weatherappTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +177,7 @@
 				15666B4C21D381BA003464E8 /* App */,
 				15666B5321D3846A003464E8 /* Classes */,
 				15666B4F21D38388003464E8 /* Library */,
+				15141F98235762E7007DE183 /* Resources */,
 				15C244C721F9B6AB0055CB6C /* Views */,
 				15666B4121D0C33E003464E8 /* Assets.xcassets */,
 				15666B4621D0C33E003464E8 /* Info.plist */,
@@ -278,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				15C244C921F9B7E10055CB6C /* HistoryTableViewCell.swift */,
+				15141F96235760FD007DE183 /* HistoryRow.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -385,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15141F9A23576329007DE183 /* historyData.json in Resources */,
 				15666B4221D0C33E003464E8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +566,7 @@
 				15141F9323574BCA007DE183 /* HistoryDetailsView.swift in Sources */,
 				15666B4E21D382F5003464E8 /* AppCoordinator.swift in Sources */,
 				15C244CA21F9B7E10055CB6C /* HistoryTableViewCell.swift in Sources */,
+				15141F97235760FD007DE183 /* HistoryRow.swift in Sources */,
 				15666B4021D0C33D003464E8 /* weatherapp.xcdatamodeld in Sources */,
 				15666B3821D0C33D003464E8 /* AppDelegate.swift in Sources */,
 				15666B5C21D39692003464E8 /* HomeCoordinator.swift in Sources */,

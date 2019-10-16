@@ -30,7 +30,7 @@ struct HistoryDetailsView: View {
                     .font(.title)
 
                 HStack {
-                    Text(history.adress)
+                    Text(history.address)
                         .font(.subheadline)
                     Spacer()
                     Text("history.date")
@@ -46,7 +46,8 @@ struct HistoryDetailsView: View {
 
 @available(iOS 13.0.0, *)
 struct HistoryDetailsView_Previews: PreviewProvider {
+    static var hist = History(address: "Toulouse", date: "16/10/2019", image: "sun", temperature: 23.0)
     static var previews: some View {
-        HistoryDetailsView(history: <#History#>)
+        HistoryDetailsView(history: hist)
     }
 }
