@@ -15,6 +15,7 @@ struct CircleImage: View {
 
     var body: some View {
         Image(image)
+            .frame(width: 300, height: 300)
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.white, lineWidth: 4))
             .shadow(radius: 10)
@@ -24,6 +25,6 @@ struct CircleImage: View {
 @available(iOS 13.0.0, *)
 struct CircleImage_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImage(image: "sun")
+        CircleImage(image: "cloud")
     }
 }

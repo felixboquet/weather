@@ -9,12 +9,14 @@
 import RealmSwift
 import ObjectMapper
 import Realm
+import SwiftUI
+import CoreLocation
 
-class History: Object {
+class History: Object, Decodable {
     
     @objc dynamic var address: String = ""
     @objc dynamic var date: String?
-    @objc dynamic var image: String = ""
+    @objc dynamic var imageName: String = ""
     @objc dynamic var temperature: Float = 0.0
     
     required convenience public init?(map: Map) {
@@ -22,11 +24,11 @@ class History: Object {
         self.mapping(map: map)
     }
     
-    init(address: String, date: String?, image: String, temperature: Float) {
+    init(address: String, date: String?, imageName: String, temperature: Float) {
         super.init()
         self.address = address
         self.date = date
-        self.image = image
+        self.imageName = imageName
         self.temperature = temperature
     }
     
@@ -44,11 +46,17 @@ class History: Object {
     
 }
 
+extension History {
+    var image: Image {
+        ImageStore.shared.image(name: imageName)
+    }
+}
+
 extension History: Mappable {
     
     public func mapping(map: Map) {
         address <- map["timezone"]
-        image <- map["currently.icon"]
+        imageName <- map["currently.icon"]
         temperature <- map["currently.temperature"]
     }
     

@@ -20,7 +20,7 @@ struct HistoryDetailsView: View {
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 300)
 
-            CircleImage(image: history.image)
+            CircleImage(image: history.imageName)
                 .offset(y: -130)
                 .padding(.bottom, -130)
 
@@ -33,7 +33,7 @@ struct HistoryDetailsView: View {
                     Text(history.address)
                         .font(.subheadline)
                     Spacer()
-                    Text("history.date")
+                    Text(history.date!)
                         .font(.subheadline)
                 }
             }
@@ -41,12 +41,12 @@ struct HistoryDetailsView: View {
 
             Spacer()
         }
-    }
+    } 
 }
 
 @available(iOS 13.0.0, *)
 struct HistoryDetailsView_Previews: PreviewProvider {
-    static var hist = History(address: "Toulouse", date: "16/10/2019", image: "sun", temperature: 23.0)
+    static var hist = History(address: "Toulouse", date: "16/10/2019", imageName: "cloud", temperature: 23.0)
     static var previews: some View {
         HistoryDetailsView(history: hist)
     }

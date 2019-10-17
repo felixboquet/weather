@@ -15,22 +15,26 @@ struct HistoryRow: View {
 
     var body: some View {
         HStack {
-            CircleImage(image: history.image)
+            history.image
+                .resizable()
                 .frame(width: 50, height: 50)
             Text(String(describing: history.temperature))
         }
     }
 }
 
+#if DEBUG
 @available(iOS 13.0.0, *)
 struct HistoryRow_Previews: PreviewProvider {
-    static var hist = History(address: "Toulouse", date: "16/10/2019", image: "sun", temperature: 23.0)
+    static var HistoryVariable = History(address: "Toulouse", date: "16/10/2019", imageName: "cloud", temperature: 23.0)
+
     static var previews: some View {
         Group {
-            HistoryRow(history: hist)
-            HistoryRow(history: hist)
+            HistoryRow(history: HistoryVariable)
+            HistoryRow(history: HistoryVariable)
         }
         .previewLayout(.fixed(width: 300, height: 70))
 
     }
 }
+#endif
